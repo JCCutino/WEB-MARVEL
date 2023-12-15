@@ -1,0 +1,851 @@
+body{
+  background: rgb(37,44,75);
+  background: radial-gradient(circle, rgba(37,44,75,1) 0%, rgba(0,0,0,1) 100%);
+}
+  :root {
+  --card-height: 300px;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-nav .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #fbd827ba;
+    color: black;
+}
+
+.navbar-nav .nav-link:hover::before {
+    width: 100%;
+    animation: neonEffectRed 1.5s infinite;
+}
+
+@media (min-width: 992px) {
+    .navbar-nav .nav-link::before {
+        display: none;
+    }
+}
+
+@keyframes neonEffectRed {
+    0% {
+        background-color: #ffffff;
+        box-shadow: 0 0 5px #ffffff;
+    }
+    50% {
+        background-color: #ff0000;
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000;
+    }
+    100% {
+        background-color: #ffffff;
+        box-shadow: 0 0 5px #ffffff;
+    }
+}
+
+header {
+    height: 300px;
+    position: relative;
+    height: 300px;
+    background-image: url('/RECURSOS/ucm_wallpaper.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-brand {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: #fbd827ba;
+    color: black;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        background-image: url('/RECURSOS/monochrome-x-men-marvel-comics-wolverine-wallpaper-preview.jpg');
+    }
+}
+
+@media (min-width: 992px) {
+    header {
+        background-image: url("https://cdn.s7.shopdisney.eu/is/image/ShopDisneyEMEA/33641_avengers_endgame_movie_mb?fit=constrain&cropN=0,0,1,1&fmt=jpeg&qlt=90&wid=1200&defaultImage=no-image-es_es");
+     
+    }
+}
+
+
+
+footer {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+footer a:hover {
+    color: #fbd827ba;
+    text-decoration: none;
+}
+
+footer h4 {
+    color: #fbd827ba;
+}
+
+
+.my-box {
+    background-color: #fbd827ba;
+    text-align: center;
+    padding: 50px 0;
+    margin: 10px 0;
+    border: 1px solid black;
+}
+.power-stone {
+    margin-left: 5rem;
+    --active: 0;
+    --transition: 0.3s;
+    --bg: radial-gradient(40% 50% at center 100%, hsla(270, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+          radial-gradient(80% 100% at center 120%, hsla(260, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+          hsl(260, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+  
+    background: var(--bg);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(260, 97%, 61%, 0.75),
+                0 0 0 0 hsla(260, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+                0 -0.05em 0 0 hsla(260, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+    transform: scale(calc(1 + (var(--active) * 0.1)));
+    transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+  }
+  
+  .power-stone.transparent {
+    --active: 1;
+  }
+  
+  .power-stone:before {
+    content: "";
+    position: absolute;
+    inset: -0.2em;
+    z-index: -1;
+    border: 0.25em solid hsla(260, 97%, 50%, 0.5);
+    border-radius: 100px;
+    opacity: var(--active, 0);
+    transition: opacity var(--transition);
+  }
+  
+  .power-stone:hover,
+  .power-stone:focus-visible {
+    --active: 1;
+  }
+
+  .time-stone {
+    margin-left: 5rem;
+    --active: 0;
+    --transition: 0.3s;
+    --bg: radial-gradient(40% 50% at center 100%, hsla(120, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+          radial-gradient(80% 100% at center 120%, hsla(110, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+          hsl(110, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+  
+    background: var(--bg);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(110, 97%, 61%, 0.75),
+                0 0 0 0 hsla(110, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+                0 -0.05em 0 0 hsla(110, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+    transform: scale(calc(1 + (var(--active) * 0.1)));
+    transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+}
+
+.time-stone.transparent {
+    --active: 1;
+}
+
+.time-stone:before {
+    content: "";
+    position: absolute;
+    inset: -0.2em;
+    z-index: -1;
+    border: 0.25em solid hsla(110, 97%, 50%, 0.5);
+    border-radius: 100px;
+    opacity: var(--active, 0);
+    transition: opacity var(--transition);
+}
+
+.time-stone:hover,
+.time-stone:focus-visible {
+    --active: 1;
+}
+
+.reality-stone {
+  margin-left: 5rem;
+  --active: 0;
+  --transition: 0.3s;
+  --bg: radial-gradient(40% 50% at center 100%, hsla(0, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+        radial-gradient(80% 100% at center 120%, hsla(10, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+        hsl(10, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+
+  background: var(--bg);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  border-radius: 100px;
+  position: relative;
+  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(10, 97%, 61%, 0.75),
+              0 0 0 0 hsla(10, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+              0 -0.05em 0 0 hsla(10, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+  transform: scale(calc(1 + (var(--active) * 0.1)));
+  transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+}
+
+.reality-stone.transparent {
+  --active: 1;
+}
+
+.reality-stone:before {
+  content: "";
+  position: absolute;
+  inset: -0.2em;
+  z-index: -1;
+  border: 0.25em solid hsla(10, 97%, 50%, 0.5);
+  border-radius: 100px;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+.reality-stone:hover,
+.reality-stone:focus-visible {
+  --active: 1;
+}
+
+
+.space-stone {
+  margin-left: 5rem;
+  --active: 0;
+  --transition: 0.3s;
+  --bg: radial-gradient(40% 50% at center 100%, hsla(210, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+        radial-gradient(80% 100% at center 120%, hsla(220, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+        hsl(220, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+
+  background: var(--bg);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  border-radius: 100px;
+  position: relative;
+  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(220, 97%, 61%, 0.75),
+              0 0 0 0 hsla(220, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+              0 -0.05em 0 0 hsla(220, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+  transform: scale(calc(1 + (var(--active) * 0.1)));
+  transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+}
+
+.space-stone.transparent {
+  --active: 1;
+}
+
+.space-stone:before {
+  content: "";
+  position: absolute;
+  inset: -0.2em;
+  z-index: -1;
+  border: 0.25em solid hsla(220, 97%, 50%, 0.5);
+  border-radius: 100px;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+.space-stone:hover,
+.space-stone:focus-visible {
+  --active: 1;
+}
+
+
+.soul-stone {
+  margin-left: 5rem;
+  --active: 0;
+  --transition: 0.3s;
+  --bg: radial-gradient(40% 50% at center 100%, hsla(30, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+        radial-gradient(80% 100% at center 120%, hsla(40, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+        hsl(40, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+
+  background: var(--bg);
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 0;
+  cursor: pointer;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  gap: 0.25em;
+  white-space: nowrap;
+  border-radius: 100px;
+  position: relative;
+  box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(40, 97%, 61%, 0.75),
+              0 0 0 0 hsla(40, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+              0 -0.05em 0 0 hsla(40, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+  transform: scale(calc(1 + (var(--active) * 0.1)));
+  transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+}
+
+.soul-stone.transparent {
+  --active: 1;
+}
+
+.soul-stone:before {
+  content: "";
+  position: absolute;
+  inset: -0.2em;
+  z-index: -1;
+  border: 0.25em solid hsla(40, 97%, 50%, 0.5);
+  border-radius: 100px;
+  opacity: var(--active, 0);
+  transition: opacity var(--transition);
+}
+
+.soul-stone:hover,
+.soul-stone:focus-visible {
+  --active: 1;
+}
+
+.mind-stone {
+    margin-left: 5rem;
+    --active: 0;
+    --transition: 0.3s;
+    --bg: radial-gradient(40% 50% at center 100%, hsla(60, calc(var(--active) * 97%), 72%, var(--active)), transparent),
+          radial-gradient(80% 100% at center 120%, hsla(70, calc(var(--active) * 97%), 70%, var(--active)), transparent),
+          hsl(70, calc(var(--active) * 97%), calc((var(--active) * 44%) + 12%));
+  
+    background: var(--bg);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border: 0;
+    cursor: pointer;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    gap: 0.25em;
+    white-space: nowrap;
+    border-radius: 100px;
+    position: relative;
+    box-shadow: 0 0 calc(var(--active) * 3em) calc(var(--active) * 1em) hsla(70, 97%, 61%, 0.75),
+                0 0 0 0 hsla(70, calc(var(--active) * 97%), calc((var(--active) * 50%) + 30%)) inset,
+                0 -0.05em 0 0 hsla(70, calc(var(--active) * 97%), calc(var(--active) * 60%)) inset;
+    transform: scale(calc(1 + (var(--active) * 0.1)));
+    transition: box-shadow var(--transition), background var(--transition), transform var(--transition);
+  }
+  
+  .mind-stone.transparent {
+    --active: 1;
+  }
+  
+  .mind-stone:before {
+    content: "";
+    position: absolute;
+    inset: -0.2em;
+    z-index: -1;
+    border: 0.25em solid hsla(70, 97%, 50%, 0.5);
+    border-radius: 100px;
+    opacity: var(--active, 0);
+    transition: opacity var(--transition);
+  }
+  
+  .mind-stone:hover,
+  .mind-stone:focus-visible {
+    --active: 1;
+  }
+  
+  .mind-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .mind-stone-modal .modal-content {
+    background-color: #443007;
+    color: #fff;
+  }
+
+  .mind-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .mind-stone-modal .modal-title {
+    color: #fabd0e;
+  }
+
+  .mind-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .mind-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .mind-stone-modal .modal-footer .btn-secondary {
+    background-color: #fabd0e;
+    border-color: #fabd0e;
+  }
+
+  .mind-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #e7a20a;
+    border-color: #e7a20a;
+  }
+
+  .time-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .time-stone-modal .modal-content {
+    background-color: #2b4905;
+    color: #fff;
+  }
+
+  .time-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .time-stone-modal .modal-title {
+    color: #6aaf0d;
+  }
+
+  .time-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .time-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .time-stone-modal .modal-footer .btn-secondary {
+    background-color: #6aaf0d;
+    border-color: #6aaf0d;
+  }
+
+  .time-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #53890a;
+    border-color: #53890a;
+  }
+
+  .power-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .power-stone-modal .modal-content {
+    background-color: #2b235f;
+    color: #fff;
+  }
+
+  .power-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .power-stone-modal .modal-title {
+    color: #c879ff;
+  }
+
+  .power-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .power-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .power-stone-modal .modal-footer .btn-secondary {
+    background-color: #c879ff;
+    border-color: #c879ff;
+  }
+
+  .power-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #a659e4;
+    border-color: #a659e4;
+  }
+
+  .space-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .space-stone-modal .modal-content {
+    background-color: #0c273a;
+    color: #fff;
+  }
+
+  .space-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .space-stone-modal .modal-title {
+    color: #00a5e0;
+  }
+
+  .space-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .space-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .space-stone-modal .modal-footer .btn-secondary {
+    background-color: #00a5e0;
+    border-color: #00a5e0;
+  }
+
+  .space-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #0082a3;
+    border-color: #0082a3;
+  }
+
+  .reality-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .reality-stone-modal .modal-content {
+    background-color: #3b0303;
+    color: #fff;
+  }
+
+  .reality-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .reality-stone-modal .modal-title {
+    color: #ff3b3b;
+  }
+
+  .reality-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .reality-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .reality-stone-modal .modal-footer .btn-secondary {
+    background-color: #ff3b3b;
+    border-color: #ff3b3b;
+  }
+
+  .reality-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #e21616;
+    border-color: #e21616;
+  }
+
+  .soul-stone-modal .modal-dialog {
+    max-width: 400px;
+  }
+
+  .soul-stone-modal .modal-content {
+    background-color: #452500;
+    color: #fff;
+  }
+
+  .soul-stone-modal .modal-header {
+    border-bottom: none;
+  }
+
+  .soul-stone-modal .modal-title {
+    color: #ff6f00;
+  }
+
+  .soul-stone-modal .modal-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .soul-stone-modal .modal-footer {
+    border-top: none;
+  }
+
+  .soul-stone-modal .modal-footer .btn-secondary {
+    background-color: #ff6f00;
+    border-color: #ff6f00;
+  }
+
+  .soul-stone-modal .modal-footer .btn-secondary:hover {
+    background-color: #e65100;
+    border-color: #e65100;
+  }
+
+  .marvel-table {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .marvel-table {
+    font-size: 14px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+
+.marvel-table thead th {
+    background-color: #500606;
+    color: #fff !important;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.marvel-table tbody td {
+    background-color: #333;
+    color: #fff !important;
+    border-color: #500606;
+}
+
+.marvel-table tbody td:first-child {
+    font-weight: bold;
+}
+
+
+        /* Colores de los iconos */
+        .spider-icon {
+          color: red;
+      }
+
+      .ironman-icon {
+          color: gold;
+      }
+
+      .blackwidow-icon {
+          color: black;
+      }
+
+      .captainamerica-icon {
+          color: blue;
+      }
+
+      .thor-icon {
+          color: silver;
+      }
+
+      .blackpanther-icon {
+          color: #24033b;
+      }
+
+      .hulk-icon {
+          color: green;
+      }
+
+      .doctorstrange-icon {
+          color: #800080;
+      }
+
+      .wolverine-icon {
+          color: #ffa500;
+      }
+
+      .captainmarvel-icon {
+          color: #ff00ff;
+      }
+
+  .custom-card {
+    background-color: #f0f0f000;
+    border: none;
+   left: 2.5rem;
+ 
+  
+  }
+
+  .card {
+    width: var(--card-width);
+    height: var(--card-height);
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 36px;
+    perspective: 2500px;
+    margin: 0 50px;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .wrapper {
+    transition: all 0.5s;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .card:hover .wrapper {
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
+    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
+  }
+  
+  .wrapper::before,
+  .wrapper::after {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 80px;
+    transition: all 0.5s;
+    position: absolute;
+    left: 0;
+  }
+  .wrapper::before {
+    top: 0;
+    height: 100%;
+    background-image: linear-gradient(
+      to top,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  .wrapper::after {
+    bottom: 0;
+    opacity: 1;
+    background-image: linear-gradient(
+      to bottom,
+      transparent 46%,
+      rgba(12, 13, 19, 0.5) 68%,
+      rgba(12, 13, 19) 97%
+    );
+  }
+  
+  .card:hover .wrapper::before,
+  .wrapper::after {
+    opacity: 1;
+  }
+  
+  .card:hover .wrapper::after {
+    height: 120px;
+  }
+  .title {
+    width: 100%;
+    transition: transform 0.5s;
+  }
+  .card:hover .title {
+    transform: translate3d(0%, -50px, 100px);
+  }
+  
+  .character {
+    bottom: -60px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .card:hover .character {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+  }
+  
+  .quotes-container {
+    background-color: #343a40;
+    padding: 20px;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+  }
+
+  .quotes-container blockquote {
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+  }
+
+  .quotes-container cite {
+    font-style: normal;
+    color: #ccc;
+  }
+  
+
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+}
